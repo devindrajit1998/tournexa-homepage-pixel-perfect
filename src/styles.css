@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -62,26 +63,31 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.875rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.22 0.04 150);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.22 0.04 150);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.22 0.04 150);
+  --primary: oklch(0.55 0.13 145);
+  --primary-foreground: oklch(1 0 0);
+  --primary-dark: oklch(0.42 0.11 148);
+  --secondary: oklch(0.97 0.02 145);
+  --secondary-foreground: oklch(0.3 0.06 150);
+  --muted: oklch(0.97 0.01 145);
+  --muted-foreground: oklch(0.5 0.02 150);
+  --accent: oklch(0.96 0.04 145);
+  --accent-foreground: oklch(0.3 0.08 150);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.92 0.01 145);
+  --input: oklch(0.92 0.01 145);
+  --ring: oklch(0.55 0.13 145);
+  --hero-script: oklch(0.6 0.14 145);
+  --dark-section: oklch(0.22 0.05 150);
+  --shadow-card: 0 4px 24px -8px oklch(0.22 0.05 150 / 0.12);
+  --shadow-elevated: 0 10px 40px -12px oklch(0.22 0.05 150 / 0.18);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -132,6 +138,14 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+  --color-primary-dark: var(--primary-dark);
+  --color-hero-script: var(--hero-script);
+  --color-dark-section: var(--dark-section);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -140,5 +154,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
   }
 }

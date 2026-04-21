@@ -1,26 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { SearchBar } from "@/components/site/SearchBar";
+import { Features } from "@/components/site/Features";
+import { Destinations } from "@/components/site/Destinations";
+import { Packages } from "@/components/site/Packages";
+import { CustomTripBanner } from "@/components/site/CustomTripBanner";
+import { Testimonials } from "@/components/site/Testimonials";
+import { FinalCTA } from "@/components/site/FinalCTA";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Tournexa — Explore More. Connect Deeper." },
+      { name: "description", content: "Discover handpicked travel journeys across Sikkim, Andaman, Himachal, Bali and beyond. Personalized tours by Tournexa." },
+      { property: "og:title", content: "Tournexa — Explore More. Connect Deeper." },
+      { property: "og:description", content: "Handcrafted travel experiences that bring you closer to nature, culture and unforgettable moments." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <SearchBar />
+      <Features />
+      <Destinations />
+      <Packages />
+      <CustomTripBanner />
+      <Testimonials />
+      <FinalCTA />
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
